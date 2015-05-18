@@ -1,0 +1,92 @@
+<!--left side summary-->
+<div id="container2">
+    <div id="container1">
+        <div class="col1">
+            <div class="innerContainer">
+                <h1>
+                    Browse movies
+                </h1>
+
+                <div class="leftDiv" ng-repeat="movie in movies" ng-click="selectMovie(movie)">
+                    <img class="thumbnail" ng-class="{'imageSelected': movie.selected }"
+                         ng-src="{{posterThumbnailBaseUrl+movie.poster_path}}" alt="movie thumbnail">
+                    <br>
+
+                    <h2 class="name" ng-class="{'textSelected': movie.selected }">{{movie.title}} </h2>
+                    <span ng-class="{'textSelected': movie.selected }">{{movie.director}}</span>
+
+                </div>
+            </div>
+        </div>
+
+        <!--right side detail panel-->
+        <!--show a simple message when no movie is selected -->
+        <div ng-show="selectedMovie == null" class="col2">
+            <div class="innerContainer">
+                Click on a movie to see details
+            </div>
+        </div>
+
+        <!--right side show movie details when a movie is selected -->
+        <div ng-show="selectedMovie != null" class="col2">
+            <div class="innerContainer">
+                <!--movie title-->
+                <h1>
+                    {{selectedMovie.title}}
+                </h1>
+
+                <!--top description part-->
+                <div class="rightTop">
+                    <img class="poster" ng-src="{{selectedMovie && posterBaseUrl + selectedMovie.poster_path || ''}}"
+                         alt="movie poster">
+
+                    <div class="rightDescription">
+                        <h2>Who made it?</h2>
+                        <b>Director:</b> {{selectedMovie.director}}
+                        <br>
+                        <b>Writers:</b> {{selectedMovie.writers.join(", ")}}
+                        <br>
+                        <b>Stars:</b> {{selectedMovie.cast | castNameFilter}}
+                        <br><br>
+
+                        <h2>What is it about?</h2>
+                        {{selectedMovie.overview}}
+                    </div>
+                </div>
+
+                <!--bottom credits part-->
+                <div>
+                    <h1>Movie credits</h1>
+
+                    <!--left side cast member summary-->
+                    <div class="creditSummaryContainer">
+                        <div class="creditSummary"
+                             ng-repeat="member in selectedMovie.cast | filter:{profile_path: '!!'}"
+                             ng-click="selectMember(member)">
+                            <img class="creditThumbnail" ng-class="{'imageSelected': member.selected }"
+                                 ng-src="{{profileThumbnailBaseUrl + member.profile_path}} " alt="credit thumbnail">
+
+                            <div class="creditDescription">
+                                <h2 class="name" ng-class="{'textSelected': member.selected }">{{member.name}}</h2>
+                                <span ng-class="{'textSelected': member.selected }">{{member.character}}</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!--right side image-->
+                    <div ng-show="selectedMovie != null && selectedMovie.selectedMember != null"
+                         class="creditImageContainer">
+                        <img class="creditImage"
+                             ng-src="{{selectedMovie && selectedMovie.selectedMember && profileBaseUrl+selectedMovie.selectedMember.profile_path || ''}} "
+                             alt="credit image">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

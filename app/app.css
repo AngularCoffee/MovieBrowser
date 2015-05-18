@@ -1,0 +1,177 @@
+/* app css stylesheet */
+
+h1, h2, body {
+    font-family: Helvetica;
+}
+
+h1, h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 24px;
+    color: #1A9DBA;
+    border-bottom: 1px solid #808080;
+    padding-bottom: 5px;
+}
+
+h2 {
+    font-size: 14px;
+    color: #484949;
+}
+
+body, html, .mainDiv, .leftSummary, .rightDetail, .container {
+    height: 100%;
+}
+
+body {
+    font-size: 14px;
+    font-weight: normal;
+    color: #484949;
+    border-top: 50px solid #313131;
+    line-height: 18px;
+}
+
+#container2 {
+    clear: left;
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff; /* column 2 background color */
+}
+
+#container1 {
+    float: left;
+    width: 100%;
+    position: relative;
+    right: 67%;
+    background: #f6f6f6; /* column 1 background color */
+}
+
+/*left column*/
+.col1 {
+    float: left;
+    width: 33%;
+    position: relative;
+    left: 67%;
+    overflow: hidden;
+}
+
+/*right column*/
+.col2 {
+    float: left;
+    width: 66%;
+    position: relative;
+    left: 67%;
+    overflow: hidden;
+}
+
+/*left side summary panel*/
+.leftSummary {
+    float: left;
+    width: 33%;
+    background-color: #f6f6f6;
+
+}
+
+/*right side detail panel*/
+.rightDetail {
+    float: right;
+    width: 66%;
+}
+
+/*container of the contents for both sides*/
+.innerContainer {
+    margin: 40px;
+}
+
+/*div container for the summary thumbnail*/
+.leftDiv {
+    float: left;
+    width: 150px;
+    height: auto;
+    text-align: center;
+    margin: 20px;
+    cursor: pointer;
+}
+
+/*image for left side summary panel*/
+.thumbnail {
+    width: 122px;
+    height: 122px;
+    border-radius: 122px;
+    border: 9px solid #f6f6f6;
+}
+
+/*text color when the movie or cast member is selected*/
+.textSelected {
+    color: #1A9DBA;
+}
+
+/*movie name or cast member name*/
+.name {
+    padding-top: 10px;
+    margin-bottom: 5px;
+}
+
+/*right side description area*/
+.rightTop {
+    min-height: 280px;
+}
+
+/*right side poster*/
+.poster {
+    width: 174px;
+    height: 262px;
+    float: left;
+}
+
+/*right side description area*/
+.rightDescription {
+    margin-left: 210px;
+}
+
+/*container for cast members */
+.creditSummaryContainer {
+    float: left;
+    overflow: hidden;
+}
+
+/*credit summary div*/
+.creditSummary {
+    width: 250px;
+    height: 80px;
+    text-align: left;
+    margin: 20px;
+    cursor: pointer;
+
+}
+
+/*credit thumbnail image*/
+.creditThumbnail {
+    border-radius: 66px;
+    border: 5px solid #ffffff;
+    float: left;
+    width: 66px;
+    height: 66px;
+}
+
+.creditImageContainer {
+    margin-left: 320px;
+}
+
+/*right side cast member image*/
+.creditImage {
+    width: 347px;
+    height: 420px;
+}
+
+.creditDescription {
+    margin-left: 90px;
+}
+
+/*border color when the image is selected*/
+.imageSelected {
+    border-color: #1A9DBA;
+}
