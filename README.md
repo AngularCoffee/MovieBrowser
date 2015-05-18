@@ -11,8 +11,11 @@ To run this project:
 
 
 Assumptions:
+
 1. The Movie Credits section only displays the cast members, not Producers, etc.
+
 2. The images and thumbnails for movie poster and cast member profile use the same image with different sizes.
 
 Coming soon:
+
 The unit test is only a placeholder at this time. Details will come soon.
