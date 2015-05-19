@@ -1,7 +1,7 @@
 'use strict';
 
 //replace the api key here
-var apiKey = 'Place your API Key here';
+var apiKey = 'your_API_key';
 
 angular.module('myApp.home', ['ngRoute', 'ngResource'])
     .config(['$routeProvider', function ($routeProvider) {
